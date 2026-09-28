@@ -37,22 +37,47 @@
             animation: pulseGlow 3s ease-in-out infinite;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            // إخفاء المحتوى الرئيسي والخدمات
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('services-grid').style.display = 'none';
+            document.getElementById('info-section').style.display = 'none';
+
+            // إخفاء كل أقسام المنتجات الفرعية
+            const subSections = document.querySelectorAll('.product-sub-section');
+            subSections.forEach(sec => sec.style.display = 'none');
+
+            // إظهار القسم المطلوب
+            document.getElementById(sectionId).style.display = 'block';
+            window.scrollTo({ top: 100, behavior: 'smooth' });
+        }
+
+        function showMain() {
+            // إخفاء أقسام المنتجات الفرعية
+            const subSections = document.querySelectorAll('.product-sub-section');
+            subSections.forEach(sec => sec.style.display = 'none');
+
+            // إظهار المحتوى الرئيسي والخدمات والبيانات
+            document.getElementById('main-content').style.display = 'flex';
+            document.getElementById('services-grid').style.display = 'grid';
+            document.getElementById('info-section').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-[#00a4e4] selection:text-black">
 
     <!-- Header Navigation -->
     <header class="w-full py-5 px-4 md:px-12 flex justify-between items-center border-b border-[#00a4e4]/15 backdrop-blur-md sticky top-0 z-50 bg-[#0b0f19]/90">
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 cursor-pointer" onclick="showMain()">
             <!-- Exact Logo Recreation Mini -->
             <div class="w-10 h-10 flex items-center justify-center bg-[#121826] border border-[#00a4e4]/30 rounded-lg p-1">
                 <svg viewBox="0 0 100 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Roof -->
                     <polygon points="50,10 90,35 10,35" fill="#8c929d"/>
                     <polygon points="50,10 90,35 50,35" fill="#0066cc"/>
                     <rect x="15" y="35" width="70" height="5" fill="#0066cc"/>
-                    <!-- NG Letters -->
                     <text x="50" y="85" font-family="Arial, sans-serif" font-weight="bold" font-size="42" fill="#0066cc" text-anchor="middle">NG</text>
-                    <!-- Base Pillars -->
                     <rect x="15" y="98" width="70" height="6" fill="#0066cc"/>
                     <rect x="10" y="110" width="80" height="7" fill="#0066cc"/>
                 </svg>
@@ -63,6 +88,7 @@
             </div>
         </div>
         <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="javascript:void(0);" onclick="showMain()" class="text-gray-300 hover:text-[#00a4e4] transition">الرئيسية</a>
             <a href="#services" class="text-gray-300 hover:text-[#00a4e4] transition">خدماتنا</a>
             <a href="#info" class="text-gray-300 hover:text-[#00a4e4] transition">البيانات</a>
             <a href="#contact" class="text-gray-300 hover:text-[#00a4e4] transition">تواصل معنا</a>
@@ -70,71 +96,230 @@
     </header>
 
     <!-- Main Content Area -->
-    <main class="flex-grow container mx-auto px-4 py-12 flex flex-col items-center justify-center text-center">
+    <main class="flex-grow container mx-auto px-4 py-12 flex flex-col items-center justify-center text-center w-full">
         
-        <!-- Exact Logo Showcase Container -->
-        <div class="relative w-44 h-52 md:w-52 md:h-60 mx-auto mb-8 bg-[#121826]/80 border-2 border-[#00a4e4]/40 rounded-2xl shadow-[0_0_40px_rgba(0,164,228,0.25)] flex flex-col items-center justify-center p-4 pulse-effect neon-glow">
-            <!-- SVG Precise Replica of the Company Logo -->
-            <svg viewBox="0 0 120 135" class="w-32 h-32 md:w-36 md:h-36 mb-2 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
-                <!-- Roof / Pediment split gray and blue -->
-                <polygon points="60,8 108,38 12,38" fill="#9ca3af"/>
-                <polygon points="60,8 108,38 60,38" fill="#0066cc"/>
-                <rect x="16" y="38" width="88" height="6" fill="#0066cc"/>
-                
-                <!-- NG letters -->
-                <text x="60" y="88" font-family="Arial, sans-serif" font-weight="900" font-size="46" fill="#0052cc" text-anchor="middle" letter-spacing="2">NG</text>
-                
-                <!-- Base pillars / lines -->
-                <rect x="16" y="102" width="88" height="6" fill="#0066cc"/>
-                <rect x="10" y="115" width="100" height="7" fill="#0066cc"/>
-            </svg>
-            <span class="text-white font-bold text-xs md:text-sm tracking-wider border-t border-[#00a4e4]/30 pt-1 px-4">شركة نور جيت</span>
+        <!-- Main Intro Header -->
+        <div id="main-content" class="flex flex-col items-center justify-center text-center w-full">
+            <!-- Exact Logo Showcase Container -->
+            <div class="relative w-44 h-52 md:w-52 md:h-60 mx-auto mb-8 bg-[#121826]/80 border-2 border-[#00a4e4]/40 rounded-2xl shadow-[0_0_40px_rgba(0,164,228,0.25)] flex flex-col items-center justify-center p-4 pulse-effect neon-glow">
+                <svg viewBox="0 0 120 135" class="w-32 h-32 md:w-36 md:h-36 mb-2 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="60,8 108,38 12,38" fill="#9ca3af"/>
+                    <polygon points="60,8 108,38 60,38" fill="#0066cc"/>
+                    <rect x="16" y="38" width="88" height="6" fill="#0066cc"/>
+                    <text x="60" y="88" font-family="Arial, sans-serif" font-weight="900" font-size="46" fill="#0052cc" text-anchor="middle" letter-spacing="2">NG</text>
+                    <rect x="16" y="102" width="88" height="6" fill="#0066cc"/>
+                    <rect x="10" y="115" width="100" height="7" fill="#0066cc"/>
+                </svg>
+                <span class="text-white font-bold text-xs md:text-sm tracking-wider border-t border-[#00a4e4]/30 pt-1 px-4">شركة نور جيت</span>
+            </div>
+
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-4 drop-shadow-[0_0_15px_rgba(0,164,228,0.4)]">
+                الريادة في <span class="text-[#00a4e4]">المنتجات الورقية وتقطيع الليزر والكرتون والجلد</span>
+            </h2>
+            <p class="text-gray-300 max-w-2xl text-base md:text-lg mb-12 leading-relaxed">
+                نقدم أفضل خدمات المنتجات الورقية، شغل ماكين ليزر، تقطيع العلب الكرتونية، والمنتجات الجلدية بأعلى معايير الجودة والدقة. اضغط على أي قسم لعرض المنتجات التفصيلية.
+            </p>
         </div>
 
-        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 drop-shadow-[0_0_15px_rgba(0,164,228,0.4)]">
-            الريادة في <span class="text-[#00a4e4]">المنتجات الورقية وتقطيع الليزر والكرتون والجلد</span>
-        </h2>
-        <p class="text-gray-300 max-w-2xl text-base md:text-lg mb-12 leading-relaxed">
-            نقدم أفضل خدمات المنتجات الورقية، شغل ماكين ليزر، تقطيع العلب الكرتونية، والمنتجات الجلدية بأعلى معايير الجودة والدقة.
-        </p>
-
-        <!-- Services Grid -->
-        <div id="services" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl mb-16">
-            <div class="bg-[#121826] p-6 rounded-2xl neon-glow neon-glow-hover text-right">
-                <div class="w-12 h-12 rounded-xl bg-[#00a4e4]/10 flex items-center justify-center mb-4 border border-[#00a4e4]/30 text-[#00a4e4] text-xl">
-                    <i class="fa-solid fa-scroll"></i>
+        <!-- Services Grid (Clickable Boxes) -->
+        <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl mb-16">
+            
+            <!-- الصندوق الأول: المنتجات الورقية -->
+            <div onclick="showSection('section-paper')" class="bg-[#121826] p-6 rounded-2xl neon-glow neon-glow-hover text-right cursor-pointer flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-[#00a4e4]/10 flex items-center justify-center mb-4 border border-[#00a4e4]/30 text-[#00a4e4] text-xl">
+                        <i class="fa-solid fa-scroll"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-xl mb-2">المنتجات الورقية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">تشكيلة واسعة ومتنوعة من الورق والمنتجات المخصصة لتلبية كافة احتياجات المطابع والشركات.</p>
                 </div>
-                <h3 class="text-white font-bold text-xl mb-2">المنتجات الورقية</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">تشكيلة واسعة ومتنوعة من الورق والمنتجات المخصصة لتلبية كافة احتياجات المطابع والشركات.</p>
+                <div class="border-t border-[#00a4e4]/20 pt-3 mt-2 flex items-center justify-between text-xs text-[#00a4e4]">
+                    <span>اضغط لعرض المنتجات</span>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
             </div>
 
-            <div class="bg-[#121826] p-6 rounded-2xl neon-glow neon-glow-hover text-right">
-                <div class="w-12 h-12 rounded-xl bg-[#00a4e4]/10 flex items-center justify-center mb-4 border border-[#00a4e4]/30 text-[#00a4e4] text-xl">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <!-- الصندوق الثاني: شغل ماكين ليزر -->
+            <div onclick="showSection('section-laser')" class="bg-[#121826] p-6 rounded-2xl neon-glow neon-glow-hover text-right cursor-pointer flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-[#00a4e4]/10 flex items-center justify-center mb-4 border border-[#00a4e4]/30 text-[#00a4e4] text-xl">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-xl mb-2">شغل ماكين ليزر</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">خدمات الحفر والقص والتشكيل باستخدام ماكينات الليزر بدقة متناهية واحترافية عالية.</p>
                 </div>
-                <h3 class="text-white font-bold text-xl mb-2">شغل ماكين ليزر</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">خدمات الحفر والقص والتشكيل باستخدام ماكينات الليزر بدقة متناهية واحترافية عالية.</p>
+                <div class="border-t border-[#00a4e4]/20 pt-3 mt-2 flex items-center justify-between text-xs text-[#00a4e4]">
+                    <span>اضغط لعرض المنتجات</span>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
             </div>
 
-            <div class="bg-[#121826] p-6 rounded-2xl neon-glow neon-glow-hover text-right">
-                <div class="w-12 h-12 rounded-xl bg-[#00a4e4]/10 flex items-center justify-center mb-4 border border-[#00a4e4]/30 text-[#00a4e4] text-xl">
-                    <i class="fa-solid fa-box-open"></i>
+            <!-- الصندوق الثالث: تقطيع الكرتون والعلب -->
+            <div onclick="showSection('section-carton')" class="bg-[#121826] p-6 rounded-2xl neon-glow neon-glow-hover text-right cursor-pointer flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-[#00a4e4]/10 flex items-center justify-center mb-4 border border-[#00a4e4]/30 text-[#00a4e4] text-xl">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-xl mb-2">تقطيع الكرتون والعلب</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">قص وتفصيل العلب الكرتونية بمقاسات مختلفة لتناسب مجالات التغليف والتعبئة.</p>
                 </div>
-                <h3 class="text-white font-bold text-xl mb-2">تقطيع الكرتون والعلب</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">قص وتفصيل العلب الكرتونية بمقاسات مختلفة لتناسب مجالات التغليف والتعبئة.</p>
+                <div class="border-t border-[#00a4e4]/20 pt-3 mt-2 flex items-center justify-between text-xs text-[#00a4e4]">
+                    <span>اضغط لعرض المنتجات</span>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
             </div>
 
-            <div class="bg-[#121826] p-6 rounded-2xl neon-glow neon-glow-hover text-right">
-                <div class="w-12 h-12 rounded-xl bg-[#00a4e4]/10 flex items-center justify-center mb-4 border border-[#00a4e4]/30 text-[#00a4e4] text-xl">
-                    <i class="fa-solid fa-briefcase"></i>
+            <!-- الصندوق الرابع: المنتجات الجلدية -->
+            <div onclick="showSection('section-leather')" class="bg-[#121826] p-6 rounded-2xl neon-glow neon-glow-hover text-right cursor-pointer flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-[#00a4e4]/10 flex items-center justify-center mb-4 border border-[#00a4e4]/30 text-[#00a4e4] text-xl">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-xl mb-2">المنتجات الجلدية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">تصنيع وتوريد المنتجات الجلدية ومستلزمات الجلود المخصصة للأعمال والشركات.</p>
                 </div>
-                <h3 class="text-white font-bold text-xl mb-2">المنتجات الجلدية</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">تصنيع وتوريد المنتجات الجلدية ومستلزمات الجلود المخصصة للأعمال والشركات.</p>
+                <div class="border-t border-[#00a4e4]/20 pt-3 mt-2 flex items-center justify-between text-xs text-[#00a4e4]">
+                    <span>اضغط لعرض المنتجات</span>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================= صفحات المنتجات الفرعية ================= -->
+
+        <!-- 1. صفحة المنتجات الورقية -->
+        <div id="section-paper" class="product-sub-section w-full max-w-5xl text-right" style="display: none;">
+            <button onclick="showMain()" class="mb-8 px-5 py-2.5 rounded-xl bg-[#121826] border border-[#00a4e4]/40 text-white hover:bg-[#00a4e4] hover:text-black transition flex items-center gap-2 font-bold text-sm">
+                <i class="fa-solid fa-arrow-right"></i> رجوع للقائمة الرئيسية
+            </button>
+            <div class="bg-[#121826] p-8 rounded-3xl neon-glow mb-8">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3 flex items-center gap-3">
+                    <i class="fa-solid fa-scroll text-[#00a4e4]"></i> منتجات القسم: المنتجات الورقية
+                </h3>
+                <p class="text-gray-300 text-sm mb-6">استعرض كافة المنتجات والخدمات الورقية المتاحة لدينا بجودة مطبوعات عالية:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">ورق مطبوع مخصص</h4>
+                        <p class="text-gray-400 text-xs">أوراق مراسلات ورقية تحمل شعار وهواية الشركة بدقة عالية.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">أكياس ورقية للدعاية</h4>
+                        <p class="text-gray-400 text-xs">أكياس هدايا وتسوق ورقية متينة بأحجام ومقابض متنوعة.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">فواتير ومستندات رسمية</h4>
+                        <p class="text-gray-400 text-xs">دفاتر فواتير وسندات قبض وسندات صرف معتمدة.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">كروت شخصية (Business Cards)</h4>
+                        <p class="text-gray-400 text-xs">بطاقات تعريفية فاخرة بخامات سميكة ولمسات جمالية مميزة.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">علب ورق خفيفة</h4>
+                        <p class="text-gray-400 text-xs">عبوات وعلب ورقية صالحة لتعبئة المنتجات الخفيفة والعطور.</p>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- 2. صفحة شغل ماكين ليزر -->
+        <div id="section-laser" class="product-sub-section w-full max-w-5xl text-right" style="display: none;">
+            <button onclick="showMain()" class="mb-8 px-5 py-2.5 rounded-xl bg-[#121826] border border-[#00a4e4]/40 text-white hover:bg-[#00a4e4] hover:text-black transition flex items-center gap-2 font-bold text-sm">
+                <i class="fa-solid fa-arrow-right"></i> رجوع للقائمة الرئيسية
+            </button>
+            <div class="bg-[#121826] p-8 rounded-3xl neon-glow mb-8">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3 flex items-center gap-3">
+                    <i class="fa-solid fa-wand-magic-sparkles text-[#00a4e4]"></i> منتجات القسم: شغل ماكين ليزر
+                </h3>
+                <p class="text-gray-300 text-sm mb-6">استعرض خدمات القص والحفر الدقيق بالليزر على مختلف الخامات:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">حفر وتشكيل الأخشاب</h4>
+                        <p class="text-gray-400 text-xs">حفر الشعارات والرسومات بدقة متناهية على الألواح الخشبية.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">قص الأكريليك والبلاستيك</h4>
+                        <p class="text-gray-400 text-xs">قص وتفريغ ألوح الأكريليك لتنفيذ اللوحات المضيئة والحروف البارزة.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">نقش اللوحات الإرشادية</h4>
+                        <p class="text-gray-400 text-xs">صناعة اللوحات المكتبية والإرشادية المنقوشة بالليزر.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">تفريغ وتشكيل الديكورات</h4>
+                        <p class="text-gray-400 text-xs">تصاميم تفريغ معقدة وفنية لمختلف أنواع الخامات.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. صفحة تقطيع الكرتون والعلب -->
+        <div id="section-carton" class="product-sub-section w-full max-w-5xl text-right" style="display: none;">
+            <button onclick="showMain()" class="mb-8 px-5 py-2.5 rounded-xl bg-[#121826] border border-[#00a4e4]/40 text-white hover:bg-[#00a4e4] hover:text-black transition flex items-center gap-2 font-bold text-sm">
+                <i class="fa-solid fa-arrow-right"></i> رجوع للقائمة الرئيسية
+            </button>
+            <div class="bg-[#121826] p-8 rounded-3xl neon-glow mb-8">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3 flex items-center gap-3">
+                    <i class="fa-solid fa-box-open text-[#00a4e4]"></i> منتجات القسم: تقطيع الكرتون والعلب
+                </h3>
+                <p class="text-gray-300 text-sm mb-6">استعرض تشكيلة العبوات والكرتون المخصص للتغليف والتعبئة:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">علب كرتون منتجات وهدايا</h4>
+                        <p class="text-gray-400 text-xs">علب كرتونية فاخرة مخصصة لتقديم المنتجات والهدايا التجارية.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">كرتون مضلع ومقوى</h4>
+                        <p class="text-gray-400 text-xs">كرتون عالي التحمل ومقوى لحماية المنتجات أثناء النقل.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">عبوات شحن وتغليف</h4>
+                        <p class="text-gray-400 text-xs">صناديق شحن بمقاسات مختلفة لتلبية أعمال المتاجر الإلكترونية.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">تفصيل مقاسات خاصة</h4>
+                        <p class="text-gray-400 text-xs">قص وتصميم كرتون حسب الطلب وبالمقاسات الدقيقة للمشروع.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. صفحة المنتجات الجلدية -->
+        <div id="section-leather" class="product-sub-section w-full max-w-5xl text-right" style="display: none;">
+            <button onclick="showMain()" class="mb-8 px-5 py-2.5 rounded-xl bg-[#121826] border border-[#00a4e4]/40 text-white hover:bg-[#00a4e4] hover:text-black transition flex items-center gap-2 font-bold text-sm">
+                <i class="fa-solid fa-arrow-right"></i> رجوع للقائمة الرئيسية
+            </button>
+            <div class="bg-[#121826] p-8 rounded-3xl neon-glow mb-8">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3 flex items-center gap-3">
+                    <i class="fa-solid fa-briefcase text-[#00a4e4]"></i> منتجات القسم: المنتجات الجلدية
+                </h3>
+                <p class="text-gray-300 text-sm mb-6">استعرض تشكيلة المنتجات الجلدية وهدايا الأعمال الفاخرة:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">محافظ ومفكرات جلدية</h4>
+                        <p class="text-gray-400 text-xs">أجندات ومفكرات بغلاف جلدي فاخر مع طباعة أو حفر الشعار.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">حافظات بطاقات وملفات</h4>
+                        <p class="text-gray-400 text-xs">حوامل كروت وحافظات مستندات جلدية أنيقة للاستخدام المهني.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">هدايا الشركات الجلدية</h4>
+                        <p class="text-gray-400 text-xs">مجموعات هدايا متكاملة من الجلود لتكريم العملاء والموظفين.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-[#0b0f19]/70 border border-[#00a4e4]/20">
+                        <h4 class="text-white font-bold mb-1">تلبيسات ومستلزمات الجلود</h4>
+                        <p class="text-gray-400 text-xs">أغطية وتلبيسات جلدية مخصصة للديكورات والمنتجات الخاصة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= نهاية صفحات المنتجات الفرعية ================= -->
 
         <!-- Official Info & Contact Details Box -->
-        <div id="info" class="w-full max-w-4xl bg-[#121826] rounded-3xl p-8 md:p-10 neon-glow text-right relative overflow-hidden mb-8">
+        <div id="info-section" class="w-full max-w-4xl bg-[#121826] rounded-3xl p-8 md:p-10 neon-glow text-right relative overflow-hidden mb-8">
             <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-[#00a4e4]/5 rounded-full blur-2xl pointer-events-none"></div>
             
             <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
