@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة نور جيت | للمنتجات الورقية، الليزر، الكرتون والجلديات</title>
+    <title>شركة نور جيت | للمنتجات الجلدية والكرتونية</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for icons -->
@@ -39,26 +39,21 @@
     </style>
     <script>
         function showSection(sectionId) {
-            // إخفاء المحتوى الرئيسي والخدمات
             document.getElementById('main-content').style.display = 'none';
             document.getElementById('services-grid').style.display = 'none';
             document.getElementById('info-section').style.display = 'none';
 
-            // إخفاء كل أقسام المنتجات الفرعية
             const subSections = document.querySelectorAll('.product-sub-section');
             subSections.forEach(sec => sec.style.display = 'none');
 
-            // إظهار القسم المطلوب
             document.getElementById(sectionId).style.display = 'block';
             window.scrollTo({ top: 100, behavior: 'smooth' });
         }
 
         function showMain() {
-            // إخفاء أقسام المنتجات الفرعية
             const subSections = document.querySelectorAll('.product-sub-section');
             subSections.forEach(sec => sec.style.display = 'none');
 
-            // إظهار المحتوى الرئيسي والخدمات والبيانات
             document.getElementById('main-content').style.display = 'flex';
             document.getElementById('services-grid').style.display = 'grid';
             document.getElementById('info-section').style.display = 'block';
@@ -69,28 +64,21 @@
 <body class="min-h-screen flex flex-col justify-between selection:bg-[#00a4e4] selection:text-black">
 
     <!-- Header Navigation -->
-    <header class="w-full py-5 px-4 md:px-12 flex justify-between items-center border-b border-[#00a4e4]/15 backdrop-blur-md sticky top-0 z-50 bg-[#0b0f19]/90">
+    <header class="w-full py-4 px-4 md:px-12 flex justify-between items-center border-b border-[#00a4e4]/15 backdrop-blur-md sticky top-0 z-50 bg-[#0b0f19]/90">
         <div class="flex items-center gap-3 cursor-pointer" onclick="showMain()">
-            <!-- Exact Logo Recreation Mini -->
-            <div class="w-10 h-10 flex items-center justify-center bg-[#121826] border border-[#00a4e4]/30 rounded-lg p-1">
-                <svg viewBox="0 0 100 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="50,10 90,35 10,35" fill="#8c929d"/>
-                    <polygon points="50,10 90,35 50,35" fill="#0066cc"/>
-                    <rect x="15" y="35" width="70" height="5" fill="#0066cc"/>
-                    <text x="50" y="85" font-family="Arial, sans-serif" font-weight="bold" font-size="42" fill="#0066cc" text-anchor="middle">NG</text>
-                    <rect x="15" y="98" width="70" height="6" fill="#0066cc"/>
-                    <rect x="10" y="110" width="80" height="7" fill="#0066cc"/>
-                </svg>
+            <!-- Header Logo Image -->
+            <div class="w-12 h-12 flex items-center justify-center bg-[#121826] border border-[#00a4e4]/30 rounded-lg p-1 overflow-hidden">
+                <img src="https://i.ibb.co/pjrrJpNp/photo-2026-09-28-20-39-21.jpg" alt="شعار شركة نور جيت" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=150';">
             </div>
             <div>
-                <h1 class="text-white font-extrabold text-base tracking-wider">شركة نور جيت</h1>
-                <p class="text-[11px] text-[#00a4e4]">Noorgate Company</p>
+                <h1 class="text-white font-extrabold text-sm md:text-base tracking-wider">شركة نور جيت</h1>
+                <p class="text-[10px] text-[#00a4e4]">للمنتجات الجلدية والكرتونية[cite: 5]</p>
             </div>
         </div>
         <div class="hidden md:flex items-center gap-6 text-sm font-medium">
             <a href="javascript:void(0);" onclick="showMain()" class="text-gray-300 hover:text-[#00a4e4] transition">الرئيسية</a>
-            <a href="#services" class="text-gray-300 hover:text-[#00a4e4] transition">خدماتنا</a>
-            <a href="#info" class="text-gray-300 hover:text-[#00a4e4] transition">البيانات</a>
+            <a href="#services-grid" class="text-gray-300 hover:text-[#00a4e4] transition">خدماتنا</a>
+            <a href="#info-section" class="text-gray-300 hover:text-[#00a4e4] transition">البيانات</a>
             <a href="#contact" class="text-gray-300 hover:text-[#00a4e4] transition">تواصل معنا</a>
         </div>
     </header>
@@ -100,21 +88,15 @@
         
         <!-- Main Intro Header -->
         <div id="main-content" class="flex flex-col items-center justify-center text-center w-full">
-            <!-- Exact Logo Showcase Container -->
-            <div class="relative w-44 h-52 md:w-52 md:h-60 mx-auto mb-8 bg-[#121826]/80 border-2 border-[#00a4e4]/40 rounded-2xl shadow-[0_0_40px_rgba(0,164,228,0.25)] flex flex-col items-center justify-center p-4 pulse-effect neon-glow">
-                <svg viewBox="0 0 120 135" class="w-32 h-32 md:w-36 md:h-36 mb-2 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="60,8 108,38 12,38" fill="#9ca3af"/>
-                    <polygon points="60,8 108,38 60,38" fill="#0066cc"/>
-                    <rect x="16" y="38" width="88" height="6" fill="#0066cc"/>
-                    <text x="60" y="88" font-family="Arial, sans-serif" font-weight="900" font-size="46" fill="#0052cc" text-anchor="middle" letter-spacing="2">NG</text>
-                    <rect x="16" y="102" width="88" height="6" fill="#0066cc"/>
-                    <rect x="10" y="115" width="100" height="7" fill="#0066cc"/>
-                </svg>
-                <span class="text-white font-bold text-xs md:text-sm tracking-wider border-t border-[#00a4e4]/30 pt-1 px-4">شركة نور جيت</span>
+            <!-- Exact Logo Showcase Container with Original Image -->
+            <div class="relative w-64 md:w-80 mx-auto mb-8 bg-[#121826]/80 border-2 border-[#00a4e4]/40 rounded-2xl shadow-[0_0_40px_rgba(0,164,228,0.25)] flex flex-col items-center justify-center p-4 pulse-effect neon-glow">
+                <div class="w-full h-auto rounded-xl overflow-hidden shadow-md flex items-center justify-center bg-black/40 p-2">
+                    <img src="https://i.ibb.co/pjrrJpNp/photo-2026-09-28-20-39-21.jpg" alt="شركة نور جيت للمنتجات الجلدية والكرتونية" class="w-full h-auto object-contain rounded-lg">
+                </div>
             </div>
 
             <h2 class="text-3xl md:text-5xl font-black text-white mb-4 drop-shadow-[0_0_15px_rgba(0,164,228,0.4)]">
-                الريادة في <span class="text-[#00a4e4]">المنتجات الورقية وتقطيع الليزر والكرتون والجلد</span>
+                الريادة في <span class="text-[#00a4e4]">تصنيع المنتجات الجلدية والكرتونية</span>
             </h2>
             <p class="text-gray-300 max-w-2xl text-base md:text-lg mb-12 leading-relaxed">
                 نقدم أفضل خدمات المنتجات الورقية، شغل ماكين ليزر، تقطيع العلب الكرتونية، والمنتجات الجلدية بأعلى معايير الجودة والدقة. اضغط على أي قسم لعرض المنتجات التفصيلية.
