@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة نور جيت | للمنتجات الورقية وتقطيع الليزر والتغليف</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #00a4e4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 25px rgba(0, 164, 228, 0.25);
+            border: 1px solid rgba(0, 164, 228, 0.3);
+        }
+
+        .neon-glow-hover:hover {
+            box-shadow: 0 0 35px rgba(0, 164, 228, 0.5);
+            border-color: rgba(0, 164, 228, 0.6);
+            transform: translateY(-3px);
+            transition: all 0.3s ease;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.9; transform: scale(0.99); }
+            50% { opacity: 1; transform: scale(1.01); }
+        }
+
+        .pulse-effect {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#00a4e4] selection:text-black">
+
+    <!-- Header Navigation -->
+    <header class="w-full py-5 px-4 md:px-12 flex justify-between items-center border-b border-[#00a4e4]/15 backdrop-blur-md sticky top-0 z-50 bg-[#0b0f19]/90">
+        <div class="flex items-center gap-3">
+            <!-- Exact Logo Recreation Mini -->
+            <div class="w-10 h-10 flex items-center justify-center bg-[#121826] border border-[#00a4e4]/30 rounded-lg p-1">
+                <svg viewBox="0 0 100 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Roof -->
+                    <polygon points="50,10 90,35 10,35" fill="#8c929d"/>
+                    <polygon points="50,10 90,35 50,35" fill="#0066cc"/>
+                    <rect x="15" y="35" width="70" height="5" fill="#0066cc"/>
+                    <!-- NG Letters -->
+                    <text x="50" y="85" font-family="Arial, sans-serif" font-weight="bold" font-size="42" fill="#0066cc" text-anchor="middle">NG</text>
+                    <!-- Base Pillars -->
+                    <rect x="15" y="98" width="70" height="6" fill="#0066cc"/>
+                    <rect x="10" y="110" width="80" height="7" fill="#0066cc"/>
+                </svg>
+            </div>
+            <div>
+                <h1 class="text-white font-extrabold text-base tracking-wider">شركة نور جيت</h1>
+                <p class="text-[11px] text-[#00a4e4]">Noorgate Company</p>
+            </div>
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="#services" class="text-gray-300 hover:text-[#00a4e4] transition">خدماتنا</a>
+            <a href="#info" class="text-gray-300 hover:text-[#00a4e4] transition">البيانات والضرائب</a>
+            <a href="#contact" class="text-gray-300 hover:text-[#00a4e4] transition">اتصل بنا</a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto px-4 py-12 flex flex-col items-center justify-center text-center">
+        
+        <!-- Exact Logo Showcase Container (Matching User's exact invoice logo) -->
+        <div class="relative w-44 h-52 md:w-52 md:h-60 mx-auto mb-8 bg-[#121826]/80 border-2 border-[#00a4e4]/40 rounded-2xl shadow-[0_0_40px_rgba(0,164,228,0.25)] flex flex-col items-center justify-center p-4 pulse-effect neon-glow">
+            <!-- SVG Precise Replica of the Company Logo -->
+            <svg viewBox="0 0 120 135" class="w-32 h-32 md:w-36 md:h-36 mb-2 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+                <!-- Roof / Pediment split gray and blue -->
+                <polygon points="60,8 108,38 12,38" fill="#9ca3af"/>
+                <polygon points="60,8 108,38 60,38" fill="#0066cc"/>
+                <rect x="16" y="38" width="88" height="6" fill="#0066cc"/>
+                
+                <!-- NG letters -->
+                <text x="60" y="88" font-family="Arial, sans-serif" font-weight="900" font-size="46" fill="#0052cc" text-anchor="middle" letter-spacing="2">NG</text>
+                
+                <!-- Base pillars / lines -->
+                <rect x="16" y="102" width="88" height="6" fill="#0066cc"/>
+                <rect x="10" y="115" width="100" height="7" fill="#0066cc"/>
+            </svg>
+            <span class="text-white font-bold text-xs md:text-sm tracking-wider border-t border-[#00a4e4]/30 pt-1 px-4">شركة نور جيت</span>
+        </div>
+
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 drop-shadow-[0_0_15px_rgba(0,164,228,0.4)]">
+            الريادة في <span class="text-[#00a4e4]">المنتجات الورقية وتقطيع الليزر والكرتون</span>
+        </h2>
+        <p class="text-gray-300 max-w-2xl text-base md:text-lg mb-12 leading-relaxed">
+            نقدم أحدث حلول قص وتشكيل العلب الكرتونية، ماكينات الليزر فائقة الدقة، والمنتجات الورقية التجارية المخصصة لتلبية كافة احتياجات التغليف العصري بأعلى معايير الجودة والاحترافية.
+        </p>
+
+        <!-- Services Grid -->
+        <div id="services" class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mb-16">
+            <div class="bg-[#121826] p-6 rounded-2xl neon-glow neon-glow-hover text-right">
+                <div class="w-12 h-12 rounded-xl bg-[#00a4e4]/10 flex items-center justify-center mb-4 border border-[#00a4e4]/30 text-[#00a4e4] text-xl">
+                    <i class="fa-solid fa-scroll"></i>
+                </div>
+                <h3 class="text-white font-bold text-xl mb-2">المنتجات الورقية</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">تشكيلة واسعة من الورق والمنتجات الورقية المصممة خصيصاً للشركات، المطابع، وأعمال التعبئة والتغليف.</p>
+            </div>
+
+            <div class="bg-[#121826] p-6 rounded-2xl neon-glow neon-glow-hover text-right">
+                <div class="w-12 h-12 rounded-xl bg-[#00a4e4]/10 flex items-center justify-center mb-4 border border-[#00a4e4]/30 text-[#00a4e4] text-xl">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h3 class="text-white font-bold text-xl mb-2">شغل ماكين ليزر وتشكيل</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">استخدام أحدث ماكينات الليزر للحفر، والتشكيل، والتفريغ بدقة فائقة على الأخشاب، الكرتون، والورق المقوى.</p>
+            </div>
+
+            <div class="bg-[#121826] p-6 rounded-2xl neon-glow neon-glow-hover text-right">
+                <div class="w-12 h-12 rounded-xl bg-[#00a4e4]/10 flex items-center justify-center mb-4 border border-[#00a4e4]/30 text-[#00a4e4] text-xl">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+                <h3 class="text-white font-bold text-xl mb-2">تقطيع العلب الكرتونية</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">تفصيل وقص وتشكيل العلب الكرتونية بمختلف المقاسات والقياسات الهندسية لتناسب المنتجات التجارية المختلفة.</p>
+            </div>
+        </div>
+
+        <!-- Official Info & Contact Details Box -->
+        <div id="info" class="w-full max-w-4xl bg-[#121826] rounded-3xl p-8 md:p-10 neon-glow text-right relative overflow-hidden mb-8">
+            <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-[#00a4e4]/5 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-file-invoice text-[#00a4e4]"></i> بيانات الشركة الرسمية ورقم السجل / الضرائب
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm md:text-base">
+                <!-- Location info -->
+                <div class="flex items-start gap-4 p-4 rounded-xl bg-[#0b0f19]/60 border border-[#00a4e4]/10">
+                    <div class="text-[#00a4e4] text-xl mt-1"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <span class="block text-gray-400 text-xs mb-1 font-semibold">عنوان الشركة:</span>
+                        <p class="text-white font-medium leading-relaxed">البكيرية، 6743، الرياض، حي الفيصلية، 12883، السعودية</p>
+                    </div>
+                </div>
+
+                <!-- Tax Number -->
+                <div class="flex items-start gap-4 p-4 rounded-xl bg-[#0b0f19]/60 border border-[#00a4e4]/10">
+                    <div class="text-[#00a4e4] text-xl mt-1"><i class="fa-solid fa-receipt"></i></div>
+                    <div>
+                        <span class="block text-gray-400 text-xs mb-1 font-semibold">الرقم الضريبي:</span>
+                        <p class="text-white font-mono tracking-wider font-bold text-base">314256791600003</p>
+                    </div>
+                </div>
+
+                <!-- Phone number interactive -->
+                <a id="contact" href="tel:0541514340" class="flex items-center gap-4 p-4 rounded-xl bg-[#0b0f19]/60 border border-[#00a4e4]/10 hover:border-[#00a4e4] transition group">
+                    <div class="w-10 h-10 rounded-lg bg-[#00a4e4]/10 flex items-center justify-center text-[#00a4e4] group-hover:bg-[#00a4e4] group-hover:text-black transition">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <span class="block text-gray-400 text-xs mb-1 font-semibold">رقم الهاتف (اضغط للاتصال المباشر):</span>
+                        <span class="text-white font-bold group-hover:text-[#00a4e4] transition dir-ltr inline-block text-base">0541514340</span>
+                    </div>
+                </a>
+
+                <!-- Email interactive -->
+                <a href="mailto:hazem@noorgateadv.com" class="flex items-center gap-4 p-4 rounded-xl bg-[#0b0f19]/60 border border-[#00a4e4]/10 hover:border-[#00a4e4] transition group">
+                    <div class="w-10 h-10 rounded-lg bg-[#00a4e4]/10 flex items-center justify-center text-[#00a4e4] group-hover:bg-[#00a4e4] group-hover:text-black transition">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <span class="block text-gray-400 text-xs mb-1 font-semibold">البريد الإلكتروني (اضغط لإرسال رسالة):</span>
+                        <span class="text-white font-bold group-hover:text-[#00a4e4] transition break-all text-sm md:text-base">hazem@noorgateadv.com</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-6 text-center border-t border-[#00a4e4]/15 bg-[#0b0f19] text-gray-400 text-sm">
+        <p>جميع الحقوق محفوظة © 2026 شركة نور جيت (Noorgate) للمنتجات الورقية والتغليف.</p>
+    </footer>
+
+</body>
+</html>
